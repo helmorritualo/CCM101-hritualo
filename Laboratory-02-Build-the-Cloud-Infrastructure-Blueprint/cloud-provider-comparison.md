@@ -1,66 +1,64 @@
-# Cloud Provider Comparison
+# Checkpoint 4: Cloud Provider Comparison
 
-## Checkpoint 4: Research the Major Cloud Providers
+## Introduction
 
-## Objective
+This report compares the core infrastructure services of **Amazon Web Services (AWS)**, **Microsoft Azure**, and **Google Cloud Platform (GCP)**. The comparison is based primarily on the providers’ official documentation, while the conclusions in the guide questions apply general cloud-computing understanding to the documented capabilities.
 
-The objective of this checkpoint is to compare the core infrastructure services offered by **Amazon Web Services (AWS)**, **Microsoft Azure**, and **Google Cloud Platform (GCP)**. Although these providers offer similar cloud capabilities, they use different product names and organize their services differently.
+## Core Infrastructure Services Comparison
 
-## Core Infrastructure Service Comparison
-
-| Infrastructure component           | Amazon Web Services (AWS)                                                                  | Microsoft Azure                                                             | Google Cloud Platform (GCP)                          | General purpose                                                                                                                   |
-| ---------------------------------- | ------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------- | ---------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| **Compute**                        | Amazon Elastic Compute Cloud (**Amazon EC2**)                                              | **Azure Virtual Machines**                                                  | **Compute Engine**                                   | Provides resizable virtual machines for running operating systems, applications, and workloads in the cloud.                      |
-| **Storage**                        | Amazon Simple Storage Service (**Amazon S3**); Amazon Elastic Block Store (**Amazon EBS**) | **Azure Blob Storage**; **Azure Managed Disks**                             | **Cloud Storage**; **Persistent Disk**               | Object storage holds files and unstructured data, while block storage supplies persistent disks for virtual machines.             |
-| **Networking**                     | Amazon Virtual Private Cloud (**Amazon VPC**)                                              | **Azure Virtual Network (VNet)**                                            | **Virtual Private Cloud (VPC)**                      | Creates logically isolated cloud networks and supports subnets, routing, security controls, private addressing, and connectivity. |
-| **Identity and Access Management** | **AWS Identity and Access Management (AWS IAM)**                                           | **Microsoft Entra ID** and **Azure role-based access control (Azure RBAC)** | **Cloud Identity and Access Management (Cloud IAM)** | Controls authentication and authorization by defining who can access cloud resources and which actions they may perform.          |
-
-## Component Discussion
-
-### Compute
-
-All three providers offer virtual-machine services that allocate processing power and memory on demand. AWS calls its main virtual-machine service **Amazon EC2**, Azure provides **Azure Virtual Machines**, and GCP provides **Compute Engine**. These services allow organizations to select machine configurations, install operating systems, and scale computing capacity according to workload requirements.
-
-### Storage
-
-Each provider offers object storage for files and unstructured data as well as block storage for virtual machines. AWS provides **Amazon S3** for object storage and **Amazon EBS** for block storage. Azure provides **Azure Blob Storage** and **Azure Managed Disks**, while GCP provides **Cloud Storage** and **Persistent Disk**.
-
-### Networking
-
-AWS, Azure, and GCP allow customers to create isolated virtual networks. These services are named **Amazon VPC**, **Azure Virtual Network**, and **Google Cloud VPC**, respectively. They support core networking functions such as IP addressing, subnets, routes, security rules, and connections between cloud resources.
-
-### Identity and Access Management
-
-Each platform provides identity and access controls based on users, groups, roles, permissions, and policies. AWS uses **AWS IAM**; Azure uses **Microsoft Entra ID** for identity services together with **Azure RBAC** for access to Azure resources; and GCP uses **Cloud IAM**. These controls support the principle of least privilege by allowing administrators to grant only the permissions required for a task.
+| Infrastructure Component                 | Amazon Web Services (AWS)                                                                                                                                                                                                                                                                                                                                                                                                                                                            | Microsoft Azure                                                                                                                                                                                                                                                                                                                                                                                                                                     | Google Cloud Platform (GCP)                                                                                                                                                                                                                                                                                                                                                                               |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Compute**                              | **Amazon Elastic Compute Cloud (Amazon EC2)** supplies secure, resizable virtual-machine capacity. Users select an instance family, processor and memory configuration, operating-system image, storage, and network settings. **EC2 Auto Scaling** can add or remove instances according to demand, while **AWS Lambda** and **Amazon EKS** provide serverless and managed-Kubernetes alternatives.                                                                                 | **Azure Virtual Machines** provides on-demand Windows and Linux virtual machines with selectable VM sizes, images, disks, and networking. **Virtual Machine Scale Sets** support groups of load-balanced, automatically scalable VMs; **Azure Functions** and **Azure Kubernetes Service (AKS)** cover serverless and managed-Kubernetes workloads.                                                                                                 | **Compute Engine** provides configurable virtual machines running on Google infrastructure, including predefined and custom machine types. **Managed instance groups** provide autoscaling and automated instance management, while **Cloud Run** and **Google Kubernetes Engine (GKE)** support serverless containers and managed Kubernetes.                                                            |
+| **Storage**                              | **Amazon S3** is object storage organized into buckets and objects and offers storage classes for different access and archival patterns. **Amazon EBS** supplies persistent block storage for EC2, while **Amazon EFS** supplies managed shared file storage. This separation lets architects select object, block, or file storage according to the workload.                                                                                                                      | **Azure Blob Storage** is scalable object storage for unstructured data such as documents, media, logs, backups, and data-lake content. **Azure Managed Disks** are Azure-managed block-level volumes for virtual machines, and **Azure Files** provides managed file shares. Azure Storage also supports redundancy and access tiers for availability and cost management.                                                                         | **Cloud Storage** stores immutable data objects in buckets and provides storage classes for frequently accessed through archival data. **Persistent Disk/Hyperdisk** provides durable block storage for Compute Engine, while **Filestore** provides managed file storage. These services cover object, block, and shared-file requirements.                                                              |
+| **Networking**                           | **Amazon Virtual Private Cloud (Amazon VPC)** creates a logically isolated network in which resources are placed into subnets and controlled with route tables, security groups, and network access control lists. Supporting services include **Elastic Load Balancing**, **Amazon Route 53**, **AWS Direct Connect**, **AWS VPN**, and **Amazon CloudFront** for traffic distribution, DNS, private connectivity, encrypted tunnels, and content delivery.                         | **Azure Virtual Network (VNet)** is the private-network foundation for Azure resources and supports subnets, routing, network security groups, peering, and private endpoints. **Azure Load Balancer/Application Gateway**, **Azure DNS**, **ExpressRoute**, **VPN Gateway**, and **Azure Front Door** provide load balancing, name resolution, private connectivity, VPN connectivity, and global application delivery.                            | **Virtual Private Cloud (VPC)** provides networking for Compute Engine VMs, GKE clusters, and serverless workloads; a Google Cloud VPC is a global resource with regional subnets. **Cloud Load Balancing**, **Cloud DNS**, **Cloud Interconnect**, **Cloud VPN**, and **Cloud CDN** provide traffic distribution, DNS, private connectivity, encrypted tunnels, and content delivery.                    |
+| **Identity and Access Management (IAM)** | **AWS Identity and Access Management (IAM)** controls authentication and authorization for AWS resources through users, groups, roles, and JSON policies. Policies define which principal can perform which actions on which resources and under what conditions; users and roles receive no permissions by default. IAM roles also provide temporary credentials to people, workloads, and AWS services, supporting least-privilege access without embedding long-term credentials. | **Microsoft Entra ID** authenticates users, groups, service principals, and managed identities, while **Azure role-based access control (Azure RBAC)** authorizes access to Azure resources. Role assignments combine a security principal, role definition, and scope, and may use built-in or custom roles. Scopes can be applied through the Azure hierarchy, including management group, subscription, resource group, and individual resource. | **Cloud Identity and Access Management (Cloud IAM)** authorizes who can perform specified actions on Google Cloud resources. Permissions are grouped into roles and granted to principals through allow policies, with inheritance through the organization, folder, project, and resource hierarchy. Service accounts and workload identity mechanisms provide identities for applications and services. |
 
 ## Guide Questions
 
 ### 1. Which cloud provider offers the broadest range of services? Explain your answer.
 
-AWS is generally considered to offer the broadest and most mature range of cloud services across compute, storage, databases, networking, analytics, security, application integration, and other categories. It has an extensive service portfolio and supports many workload types, although the best provider still depends on an organization's technical and business requirements.
+**AWS offers the broadest overall service catalog among the three providers.** Its official documentation organizes a particularly extensive set of services across compute, containers, storage, networking, databases, analytics, machine learning, Internet of Things, security, migration, media, and other specialized categories. “Broadest” does not mean AWS is automatically the best choice, because the correct provider still depends on the organization’s workloads, existing skills, integration requirements, location, governance, and cost model.
 
 ### 2. Which cloud platform would you recommend for an organization that primarily uses Microsoft products? Why?
 
-Microsoft Azure is the most natural recommendation for an organization that primarily uses Microsoft products. Its integration with services and technologies in the Microsoft ecosystem can provide a more consistent approach to identity, administration, hybrid infrastructure, and application deployment.
+**Microsoft Azure is the most natural recommendation for an organization primarily using Microsoft products.** Azure integrates with Microsoft Entra ID, Windows Server, SQL Server, Microsoft 365, Visual Studio, GitHub, and Microsoft’s management and security ecosystem, which can simplify identity, administration, and hybrid-cloud operations. The final selection should still be validated against workload, security, availability, and cost requirements rather than being based only on the existing vendor relationship.
 
-### 3. Which platform is widely recognized for Artificial Intelligence, Machine Learning, and Kubernetes services?
+### 3. Which platform is widely recognized for Artificial Intelligence (AI), Machine Learning (ML), and Kubernetes services?
 
-Google Cloud Platform is widely recognized for its capabilities in artificial intelligence, machine learning, data analytics, and Kubernetes. Google originated Kubernetes and offers managed Kubernetes through **Google Kubernetes Engine (GKE)**, while its cloud platform also provides services for developing and deploying machine-learning solutions.
+**Google Cloud Platform is widely recognized for AI, ML, data analytics, and Kubernetes-oriented workloads.** GCP provides **Vertex AI** for building, training, and deploying predictive and generative AI models, and **Google Kubernetes Engine (GKE)** as its managed Kubernetes service. Google originally developed Kubernetes before donating it to the Cloud Native Computing Foundation, which gives GCP a strong historical and technical association with Kubernetes, although AWS and Azure also provide mature AI/ML and managed-Kubernetes services.
 
 ### 4. What similarities did you observe among the three cloud providers?
 
-All three providers offer comparable foundational services for compute, storage, networking, and identity and access management. They also provide on-demand resource provisioning, scalability, security controls, monitoring, global infrastructure, and usage-based service models, but their product names, interfaces, and implementation details differ.
+All three providers deliver the same fundamental cloud building blocks: scalable virtual machines, object/block/file storage, isolated virtual networks, load balancing, private connectivity, DNS, and identity-based authorization. They also support autoscaling, serverless computing, managed Kubernetes, multiple geographic locations, encryption, monitoring, automation, role-based or policy-based access, and pay-as-you-use consumption. Their main differences are service names, resource hierarchies, network designs, policy models, integrations, pricing structures, and areas of specialization.
 
-## Overall Comparison
+## Key Findings
 
-| Consideration             | AWS                                      | Microsoft Azure                                                  | Google Cloud Platform                                |
-| ------------------------- | ---------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------- |
-| Notable general strength  | Broad and mature cloud service portfolio | Integration with the Microsoft ecosystem and hybrid environments | AI, machine learning, data analytics, and Kubernetes |
-| Virtual-machine service   | Amazon EC2                               | Azure Virtual Machines                                           | Compute Engine                                       |
-| Object-storage service    | Amazon S3                                | Azure Blob Storage                                               | Cloud Storage                                        |
-| Virtual-network service   | Amazon VPC                               | Azure Virtual Network                                            | Google Cloud VPC                                     |
-| Access-management service | AWS IAM                                  | Microsoft Entra ID and Azure RBAC                                | Cloud IAM                                            |
+- **AWS** emphasizes service breadth and offers many specialized infrastructure and platform services.
+- **Azure** provides strong alignment with Microsoft-centered enterprise identity, software, development, and hybrid environments.
+- **GCP** has a strong association with Kubernetes, data analytics, and AI/ML through services such as GKE, BigQuery, and Vertex AI.
+- The services are not always exact one-to-one replacements; architects must compare scope, limitations, regional availability, security behavior, and pricing before migrating workloads.
+- The best provider depends on technical and organizational requirements rather than on a single universal ranking.
 
-## Conclusion
+## Official Documentation References
 
-AWS, Microsoft Azure, and Google Cloud Platform provide the same major categories of cloud infrastructure under different service names. AWS stands out for the breadth and maturity of its portfolio, Azure is a strong fit for organizations centered on Microsoft technologies, and GCP is widely recognized for AI, machine learning, data analytics, and Kubernetes. Selecting a provider should ultimately depend on workload requirements, existing technologies, staff expertise, governance needs, and organizational priorities.
+### Amazon Web Services
+
+- [AWS Documentation Overview](https://aws.amazon.com/documentation-overview/)
+- [Amazon EC2 Documentation](https://aws.amazon.com/documentation-overview/ec2/)
+- [Identity and access management for Amazon VPC](https://docs.aws.amazon.com/vpc/latest/userguide/security-iam.html)
+- [IAM roles for Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html)
+
+### Microsoft Azure
+
+- [Introduction to Azure Storage](https://learn.microsoft.com/en-us/azure/storage/common/storage-introduction)
+- [Azure Managed Disks Overview](https://learn.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview)
+- [Azure Built-in Roles](https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles)
+- [Authorize Blob Access with Microsoft Entra ID](https://learn.microsoft.com/en-us/azure/storage/blobs/authorize-access-azure-active-directory)
+
+### Google Cloud
+
+- [Compare AWS and Azure Services to Google Cloud](https://docs.cloud.google.com/docs/get-started/aws-azure-gcp-service-comparison)
+
+## Research and Academic Integrity Note
+
+The technical descriptions and service mappings in this report were checked against the official documentation linked above. The comparative recommendations are reasoned conclusions based on those documented capabilities and general cloud-computing principles; they should not be interpreted as guarantees that one provider is best for every workload. AI assistance was used to organize and improve the report, and the final content should be reviewed by the student before submission in accordance with the activity’s academic-integrity requirements.
