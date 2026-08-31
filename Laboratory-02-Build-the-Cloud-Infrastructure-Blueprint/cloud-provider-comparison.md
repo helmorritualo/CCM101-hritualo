@@ -58,7 +58,3 @@ All three providers deliver the same fundamental cloud building blocks: scalable
 ### Google Cloud
 
 - [Compare AWS and Azure Services to Google Cloud](https://docs.cloud.google.com/docs/get-started/aws-azure-gcp-service-comparison)
-
-## Research and Academic Integrity Note
-
-The technical descriptions and service mappings in this report were checked against the official documentation linked above. The comparative recommendations are reasoned conclusions based on those documented capabilities and general cloud-computing principles; they should not be interpreted as guarantees that one provider is best for every workload. AI assistance was used to organize and improve the report, and the final content should be reviewed by the student before submission in accordance with the activity’s academic-integrity requirements.
