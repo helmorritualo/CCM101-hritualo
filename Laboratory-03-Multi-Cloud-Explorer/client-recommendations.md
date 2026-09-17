@@ -43,3 +43,14 @@ A multinational online store needs infrastructure that is available in many loca
 - Amazon Elastic Compute Cloud (Amazon EC2)
 - Amazon EC2 Auto Scaling
 - Amazon CloudFront
+
+# Checkpoint 6 – Multi-Cloud Decision Matrix
+
+| Business Requirement | Recommended Platform | Justification |
+| --- | --- | --- |
+| Startup Company | Amazon Web Services (AWS) | AWS documents pay-as-you-go pricing and Amazon EC2 Auto Scaling, so a small team can start with limited resources and grow capacity as demand increases. |
+| Enterprise Organization | Amazon Web Services (AWS) | AWS officially serves enterprises and governments with the broadest cloud service catalog and a large global infrastructure for governed, multi-workload environments. |
+| Microsoft Environment | Microsoft Azure | Azure Virtual Machines, Microsoft Entra ID, and Microsoft 365 directory synchronization are designed to extend Windows Server and Active Directory environments into the cloud. |
+| AI / Machine Learning | Google Cloud Platform (GCP) | Google Cloud provides Vertex AI for training and deploying models and Cloud TPU accelerators for high-performance machine learning workloads. |
+| Kubernetes Deployment | Google Cloud Platform (GCP) | Kubernetes was developed by Google, and Google Kubernetes Engine is Google Cloud’s managed Kubernetes service with automated cluster operations. |
+| Global Web Application | Amazon Web Services (AWS) | AWS documents the most extensive global infrastructure, and Amazon CloudFront with Amazon EC2 Auto Scaling supports low-latency delivery and automatic scaling worldwide. |
