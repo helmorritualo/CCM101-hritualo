@@ -1,0 +1,9 @@
+# Mission Reflection: The Cloud Automation Engineer
+
+Completing this laboratory helped me understand why automation is important in cloud computing. When managing hundreds of servers, performing tasks manually takes too much time and increases the possibility of human error. Automation allows administrators to perform repetitive tasks consistently and efficiently. For example, using a Bash script and a cron job makes it possible to schedule regular backups without requiring someone to execute the script manually every day.
+
+However, automation also has risks. A small mistake in a script, especially a destructive command, could affect hundreds or even thousands of servers if it runs without proper safeguards. This could result in deleted files, service interruptions, or data loss. To prevent these problems, automation scripts should be reviewed and tested before deployment. Administrators should also maintain backups, use appropriate permissions, monitor execution logs, and deploy changes gradually instead of immediately applying them to every server.
+
+Writing a Bash script was different from creating a Docker Compose YAML file in Mission 6. Bash uses commands and programming logic to execute tasks step by step, such as creating directories and compressing files. Docker Compose uses YAML to describe and configure application services, containers, networks, and other resources. Both tools help automate cloud-related work, but they serve different purposes.
+
+Reviewing my GitHub portfolio from Laboratory 1 to Laboratory 9, I can see how the activities introduced different aspects of cloud computing, including infrastructure, multi-cloud environments, cloud-native development, data, deployment, operations, security, and automation. These activities helped me understand that managing cloud environments requires more than deploying applications. It also involves maintaining reliability, protecting resources, and reducing unnecessary manual work.
